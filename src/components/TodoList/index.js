@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTodoList } from "../../store/actions/todo";
+import Button from "./UI/Button";
 
 const TodoList = (props) => {
   const dispatch = useDispatch();
@@ -8,11 +9,11 @@ const TodoList = (props) => {
     dispatch(fetchTodoList());
   };
   const pending = useSelector((state) => state.todo.pending);
+  const buttonText = pending ? "Pending..." : "Renew List";
   return (
     <div>
-      <button onClick={listHandler}>List</button>
+      <Button onClick={listHandler}>{buttonText}</Button>
 
-      <span>{pending.toString()}</span>
       {list.map((item) => (
         <div key={item.url}>
           <span>{item.name}</span>
