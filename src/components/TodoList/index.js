@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTodoList } from "../../store/actions/todo";
-import Button from "./UI/Button";
+import Button from "../UI/Button";
 
 const TodoList = (props) => {
   const dispatch = useDispatch();
