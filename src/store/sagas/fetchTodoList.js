@@ -1,15 +1,13 @@
 import { call, put } from "redux-saga/effects";
 import axios from "axios";
 import { fetchTodoListError, fetchTodoListSuccess } from "../actions/todo";
+import { generateTodoId } from "../../common/utils";
 const run = function* (action) {
   try {
     const todo = yield call(axios.get, "https://swapi.dev/api/people/");
     const result = todo.data.results;
     const updatedResult = result.map((item) => {
-      let urlArray = item.url.split("/");
-      let id = urlArray[urlArray.length - 1]
-        ? urlArray[urlArray.length - 1]
-        : urlArray[urlArray.length - 2];
+      const id = generateTodoId(item.url);
       return {
         name: item.name,
         id: id,

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { call, put } from "redux-saga/effects";
+import { generateTodoId } from "../../common/utils";
 import { fetchTodoItemError, fetchTodoItemSuccess } from "../actions/todo";
 
 const run = function* (action) {
@@ -9,7 +10,9 @@ const run = function* (action) {
       `https://swapi.dev/api/people/${action.payload}`
     );
     const result = todoItem.data;
-    yield put(fetchTodoItemSuccess(result));
+    const id = generateTodoId(result.url);
+    const updatedResult = { ...result, id };
+    yield put(fetchTodoItemSuccess(updatedResult));
   } catch (error) {
     yield put(fetchTodoItemError(error));
   }

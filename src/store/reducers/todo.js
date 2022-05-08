@@ -24,7 +24,12 @@ const todoReducer = (state = INITIAL_STATE, action) => {
       return { ...state, errorItem: action.payload, pendingItem: false };
     }
     case TODO_ACTION_TYPES.SUCCESS_ITEM: {
-      const newItems = action.payload;
+      const newItem = action.payload;
+      const allItems = state.items;
+      const newItems =
+        allItems.length > 0
+          ? allItems.map((item) => (item.id === newItem.id ? newItem : item))
+          : [newItem];
       return {
         ...state,
         items: newItems,
