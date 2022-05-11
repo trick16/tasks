@@ -9,9 +9,19 @@ const TodoItem = (props) => {
   useEffect(() => {
     dispatch(fetchTodoItem(params.todoId));
   }, [dispatch, params.todoId]);
-  const state = useSelector((state) => state.todo);
-  console.log(state);
+  const item = useSelector((state) =>
+    state.todo.items.find((item) => item.id === params.todoId)
+  );
+  if (!item) return null;
 
-  return <h2>My id {params.todoId}</h2>;
+  return (
+    <div>
+      <h2>My id {params.todoId}</h2>
+      <dd>Hair color</dd>
+      <dt>{item.hair_color}</dt>
+      <dd>Eyes color</dd>
+      <dt>{item.eye_color}</dt>
+    </div>
+  );
 };
 export default TodoItem;

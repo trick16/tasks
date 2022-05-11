@@ -15,7 +15,16 @@ const todoReducer = (state = INITIAL_STATE, action) => {
       return { ...state, error: action.payload, pending: false };
     }
     case TODO_ACTION_TYPES.SUCCESS_LIST: {
-      return { ...state, error: null, pending: false, items: action.payload };
+      const newItems = action.payload;
+      const oldItems = state.items;
+      const renewed = newItems.map((item) => {
+        const oldItem = oldItems.find(
+          (oldToCompare) => oldToCompare.id === item.id
+        );
+        return oldItem ? { ...oldItem, ...item } : item;
+      });
+      //TODO merge items
+      return { ...state, error: null, pending: false, items: renewed };
     }
     case TODO_ACTION_TYPES.FETCH_ITEM: {
       return { ...state, pendingItem: true };
