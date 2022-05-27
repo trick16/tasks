@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchTodoList } from "../../store/actions/todo";
-import Button from "../UI/Button";
+import Button from "../../components/UI/Button";
 
 const TodoList = (props) => {
   const dispatch = useDispatch();

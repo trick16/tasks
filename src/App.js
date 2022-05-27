@@ -1,5 +1,5 @@
-import TodoList from "./components/TodoList";
-import TodoItem from "./components/TodoItem";
+import TodoList from "./pages/TodoList";
+import TodoItem from "./pages/TodoItem";
 import configureStore from "./store";
 import "./App.css";
 import { Provider } from "react-redux";
