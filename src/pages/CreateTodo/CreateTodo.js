@@ -1,9 +1,10 @@
 import Input from "../../components/UI/Input";
+import Title from "../../components/UI/Title";
 
 const CreateTodo = () => {
   return (
     <>
-      <h1>Create todo</h1>
+      <Title>Create todo</Title>
       <Input type="text" />
     </>
   );

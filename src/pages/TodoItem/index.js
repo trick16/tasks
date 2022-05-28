@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Title from "../../components/UI/Title";
 import { fetchTodoItem } from "../../store/actions/todo";
 
 const TodoItem = (props) => {
@@ -16,7 +17,7 @@ const TodoItem = (props) => {
 
   return (
     <div>
-      <h1>Todo details</h1>
+      <Title>Todo details</Title>
       <h2>My id {params.todoId}</h2>
       <dd>Hair color</dd>
       <dt>{item.hair_color}</dt>

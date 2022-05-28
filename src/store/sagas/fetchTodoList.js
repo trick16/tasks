@@ -4,7 +4,10 @@ import { fetchTodoListError, fetchTodoListSuccess } from "../actions/todo";
 import { generateTodoId } from "../../common/utils";
 const run = function* (action) {
   try {
-    const todo = yield call(axios.get, "https://swapi.dev/api/people/");
+    const todo = yield call(
+      axios.get,
+      "https://react-http-test-f4741-default-rtdb.firebaseio.com/todos.json"
+    );
     const result = todo.data.results;
     const updatedResult = result.map((item) => {
       const id = generateTodoId(item.url);

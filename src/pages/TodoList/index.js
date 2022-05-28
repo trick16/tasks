@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchTodoList } from "../../store/actions/todo";
 import Button from "../../components/UI/Button";
+import Title from "../../components/UI/Title";
 
 const TodoList = (props) => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const TodoList = (props) => {
   const buttonText = pending ? "Pending..." : "Renew List";
   return (
     <div>
-      <h1>Todo list</h1>
+      <Title>Todo list</Title>
       <Button onClick={listHandler}>{buttonText}</Button>
       <Button>
         <Link to={`/new`}>Create Todo</Link>
