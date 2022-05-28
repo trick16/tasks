@@ -27,3 +27,22 @@
 //   edited: "2014-12-20T21:17:56.891000Z", //generate in saga update
 //   url: "https://swapi.dev/api/people/1/", //generate id in saga  save button disabele + redirect to list button + setTimeout 3 sec +
 // };
+
+import axios from "axios";
+import { call, put } from "redux-saga/effects";
+import { createTodoItemError, createTodoItemSuccess } from "../actions/todo";
+
+const run = function* (action) {
+  try {
+    const response = yield call(
+      axios.post,
+      "https://react-http-test-f4741-default-rtdb.firebaseio.com/todo.json",
+      action.payload
+    );
+    console.log(response);
+    yield put(createTodoItemSuccess());
+  } catch (error) {
+    yield put(createTodoItemError(error));
+  }
+};
+export default run;

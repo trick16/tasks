@@ -1,10 +1,11 @@
 import TodoList from "./pages/TodoList";
 import TodoItem from "./pages/TodoItem";
+import CreateTodo from "./pages/CreateTodo";
 import configureStore from "./store";
 import "./App.css";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import CreateTodo from "./pages/CreateTodo/CreateTodo";
+
 const store = configureStore();
 function App() {
   return (

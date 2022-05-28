@@ -46,6 +46,15 @@ const todoReducer = (state = INITIAL_STATE, action) => {
         pendingItem: false,
       };
     }
+    case TODO_ACTION_TYPES.CREATE_ITEM: {
+      return { ...state, pendingCreate: true };
+    }
+    case TODO_ACTION_TYPES.ERROR_ITEM_CREATE: {
+      return { ...state, errorCreate: action.payload, pendingCreate: false };
+    }
+    case TODO_ACTION_TYPES.SUCCESS_ITEM_CREATE: {
+      return { ...state, pendingCreate: false };
+    }
     default:
       return state;
   }
