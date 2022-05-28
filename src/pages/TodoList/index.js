@@ -13,8 +13,11 @@ const TodoList = (props) => {
   const buttonText = pending ? "Pending..." : "Renew List";
   return (
     <div>
+      <h1>Todo list</h1>
       <Button onClick={listHandler}>{buttonText}</Button>
-
+      <Button>
+        <Link to={`/new`}>Create Todo</Link>
+      </Button>
       {list.map((item) => (
         <div key={item.id}>
           <Link to={`/${item.id}`}>

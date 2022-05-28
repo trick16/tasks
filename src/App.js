@@ -4,6 +4,7 @@ import configureStore from "./store";
 import "./App.css";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CreateTodo from "./pages/CreateTodo/CreateTodo";
 const store = configureStore();
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<TodoList />} />
             <Route path=":todoId" element={<TodoItem />} />
+            <Route path="/new" element={<CreateTodo />} />
           </Routes>
         </Provider>
       </BrowserRouter>

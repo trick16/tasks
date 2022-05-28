@@ -16,6 +16,7 @@ const TodoItem = (props) => {
 
   return (
     <div>
+      <h1>Todo details</h1>
       <h2>My id {params.todoId}</h2>
       <dd>Hair color</dd>
       <dt>{item.hair_color}</dt>
