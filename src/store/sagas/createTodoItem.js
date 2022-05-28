@@ -36,7 +36,7 @@ const run = function* (action) {
   try {
     const response = yield call(
       axios.post,
-      "https://react-http-test-f4741-default-rtdb.firebaseio.com/todo.json",
+      "https://react-http-test-f4741-default-rtdb.firebaseio.com/todos.json",
       action.payload
     );
     console.log(response);

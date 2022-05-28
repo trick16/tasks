@@ -19,10 +19,10 @@ const TodoItem = (props) => {
     <div>
       <Title>Todo details</Title>
       <h2>My id {params.todoId}</h2>
-      <dd>Hair color</dd>
-      <dt>{item.hair_color}</dt>
-      <dd>Eyes color</dd>
-      <dt>{item.eye_color}</dt>
+      <dd>Todo name</dd>
+      <dt>{item.name}</dt>
+      <dd>Todo description</dd>
+      <dt>{item.description}</dt>
     </div>
   );
 };

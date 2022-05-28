@@ -24,7 +24,6 @@ const TodoList = (props) => {
           <Link to={`/${item.id}`}>
             <span>{item.name}</span>
           </Link>
-          <span>{item.birth_year}</span>
         </div>
       ))}
     </div>
