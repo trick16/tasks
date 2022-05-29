@@ -14,7 +14,7 @@ const run = function* (action) {
       result.push({
         id: key,
         name: data[key].name,
-        data: data[key].data,
+        date: data[key].date,
         color: data[key].color,
         isImportant: data[key].isImportant,
       });

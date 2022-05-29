@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { fetchTodoList } from "../../store/actions/todo";
 import Button from "../../components/UI/Button";
 import Title from "../../components/UI/Title";
+import Sticker from "../../components/UI/Sticker";
 
 const TodoList = (props) => {
   const dispatch = useDispatch();
@@ -19,12 +20,19 @@ const TodoList = (props) => {
       <Button>
         <Link to={`/new`}>Create Todo</Link>
       </Button>
+
       {list.map((item) => (
-        <div key={item.id}>
+        <Sticker
+          key={item.id}
+          name={item.name}
+          description={item.description}
+          color={item.color}
+          date={item.date}
+        >
           <Link to={`/${item.id}`}>
             <span>{item.name}</span>
           </Link>
-        </div>
+        </Sticker>
       ))}
     </div>
   );

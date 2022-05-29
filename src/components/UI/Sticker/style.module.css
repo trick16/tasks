@@ -1,0 +1,8 @@
+.sticker {
+  min-height: 100%;
+  min-width: 100%;
+  background: #caf0f8;
+  border: 1px solid #00b4d8;
+  border-radius: 10px;
+  box-shadow: 1px 5px 13px #0077b6;
+}
