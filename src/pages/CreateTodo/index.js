@@ -6,11 +6,13 @@ import { createTodoItem } from "../../store/actions/todo";
 
 const CreateTodo = () => {
   const item = {
-    name: "todo2",
-    data: "3435",
+    name: "Test3",
+    date: "15:30",
+    time: "05/2/24",
     color: "blue",
-    important: false,
-    description: "asdf",
+    isImportant: true,
+    isDone: false,
+    description: "sdfs sdf sdfjflkasdf",
   };
   const dispatch = useDispatch();
   const createItemHandler = () => {

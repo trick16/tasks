@@ -19,6 +19,7 @@ const run = function* (action) {
         isImportant: data[key].isImportant,
         isDone: data[key].isDone,
         description: data[key].description,
+        created: data[key].created,
       });
     }
     yield put(fetchTodoListSuccess(result));

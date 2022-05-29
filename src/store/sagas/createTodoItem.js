@@ -34,10 +34,14 @@ import { createTodoItemError, createTodoItemSuccess } from "../actions/todo";
 
 const run = function* (action) {
   try {
+    const updatedData = {
+      ...action.payload,
+      created: new Date().toLocaleString(),
+    };
     const response = yield call(
       axios.post,
       "https://react-http-test-f4741-default-rtdb.firebaseio.com/todos.json",
-      action.payload
+      updatedData
     );
     console.log(response);
     yield put(createTodoItemSuccess());

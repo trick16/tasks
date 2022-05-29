@@ -16,7 +16,7 @@ const TodoList = (props) => {
   const buttonText = pending ? "Pending..." : "Renew List";
   return (
     <div className={style.todo}>
-      <Title>Todo list</Title>
+      <Title>Your tasks</Title>
       <Button onClick={listHandler}>{buttonText}</Button>
       <Button>
         <Link to={`/new`}>Create Todo</Link>
@@ -32,6 +32,7 @@ const TodoList = (props) => {
             time={item.time}
             isDone={item.isDone}
             isImportant={item.isImportant}
+            created={item.created}
           ></Sticker>
         ))}
       </div>

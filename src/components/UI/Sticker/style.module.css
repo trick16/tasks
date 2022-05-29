@@ -7,7 +7,13 @@
   box-shadow: 1px 5px 13px #0077b6;
   color: #03045e;
 }
-
+.important {
+  color: red;
+  padding: 0 10px;
+}
+.done {
+  text-decoration-line: line-through;
+}
 h4 {
   margin: 0 0 20px;
   font-size: 20px;
@@ -17,6 +23,10 @@ h5 {
   margin: 0 0 10px;
   font-size: 15px;
   font-family: sans-serif;
+}
+
+p {
+  margin: 0 20px 10 0;
 }
 p {
   color: black;
