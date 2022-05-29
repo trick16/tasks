@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { fetchTodoList } from "../../store/actions/todo";
 import Button from "../../components/UI/Button";
 import Title from "../../components/UI/Title";
@@ -12,15 +12,18 @@ const TodoList = (props) => {
   const listHandler = () => {
     dispatch(fetchTodoList());
   };
+
+  useEffect(listHandler, [dispatch]);
+
+  const createHandler = () => {};
   const pending = useSelector((state) => state.todo.pending);
-  const buttonText = pending ? "Pending..." : "Renew List";
+  const buttonText = pending ? "Pending..." : "Update";
   return (
     <div className={style.todo}>
       <Title>Your tasks</Title>
+      <Button onClick={createHandler}>Create</Button>
       <Button onClick={listHandler}>{buttonText}</Button>
-      <Button>
-        <Link to={`/new`}>Create Todo</Link>
-      </Button>
+
       <div className={style.todoContainer}>
         {list.map((item) => (
           <Sticker
