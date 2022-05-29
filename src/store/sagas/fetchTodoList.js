@@ -1,7 +1,6 @@
 import { call, put } from "redux-saga/effects";
 import axios from "axios";
 import { fetchTodoListError, fetchTodoListSuccess } from "../actions/todo";
-import { generateTodoId } from "../../common/utils";
 const run = function* (action) {
   try {
     const todos = yield call(
@@ -15,8 +14,11 @@ const run = function* (action) {
         id: key,
         name: data[key].name,
         date: data[key].date,
+        time: data[key].time,
         color: data[key].color,
         isImportant: data[key].isImportant,
+        isDone: data[key].isDone,
+        description: data[key].description,
       });
     }
     yield put(fetchTodoListSuccess(result));
