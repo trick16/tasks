@@ -5,10 +5,8 @@ const Sticker = (props) => {
 
   return (
     <div className={style.sticker}>
-      <h4 className={style[headerIsDone]}>
-        {headerIsImportant && (
-          <span className={style[headerIsImportant]}>!</span>
-        )}
+      <h4 className={`${style[headerIsDone]} ${style[headerIsImportant]}`}>
+        {headerIsImportant && <span>! </span>}
         {props.name}
       </h4>
       <h5>Need to be done due:</h5>
