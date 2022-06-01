@@ -12,7 +12,10 @@ const Modal = (props) => {
         document.getElementById("backdrop")
       )}
       {ReactDOM.createPortal(
-        <div className={styles.modal} onClick={props.onClose}>
+        <div className={styles.modal}>
+          <div className={styles.close} onClick={props.onClose}>
+            X
+          </div>
           {props.children}
         </div>,
         document.getElementById("modal")

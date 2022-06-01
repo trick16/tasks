@@ -1,6 +1,5 @@
 import TodoList from "./pages/TodoList";
 import TodoItem from "./pages/TodoItem";
-import CreateTodo from "./pages/CreateTodo";
 import configureStore from "./store";
 import "./App.css";
 import { Provider } from "react-redux";
@@ -15,7 +14,6 @@ function App() {
           <Routes>
             <Route path="/" element={<TodoList />} />
             <Route path=":todoId" element={<TodoItem />} />
-            <Route path="/new" element={<CreateTodo />} />
           </Routes>
         </Provider>
       </BrowserRouter>

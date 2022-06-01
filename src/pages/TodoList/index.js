@@ -1,11 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchTodoList } from "../../store/actions/todo";
+
 import Button from "../../components/UI/Button";
 import Title from "../../components/UI/Title";
 import Sticker from "../../components/UI/Sticker";
-import style from "./style.module.css";
 import Modal from "../../components/UI/Modal";
+import CreateTodo from "../../components/CreateTodo";
+
+import style from "./style.module.css";
 
 const TodoList = (props) => {
   const dispatch = useDispatch();
@@ -31,7 +34,11 @@ const TodoList = (props) => {
       <Title>Your tasks</Title>
       <Button onClick={createHandler}>Create</Button>
       <Button onClick={listHandler}>{buttonText}</Button>
-      {showCreate && <Modal onClose={closeCreateHandler}></Modal>}
+      {showCreate && (
+        <Modal onClose={closeCreateHandler}>
+          <CreateTodo></CreateTodo>
+        </Modal>
+      )}
       <div className={style.todoContainer}>
         {list.map((item) => (
           <Sticker

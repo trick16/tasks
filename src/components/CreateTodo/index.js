@@ -1,8 +1,9 @@
 import { useDispatch } from "react-redux";
-import Button from "../../components/UI/Button";
-import Input from "../../components/UI/Input";
-import Title from "../../components/UI/Title";
+import Button from "../UI/Button";
+import Input from "../UI/Input";
+import Title from "../UI/Title";
 import { createTodoItem } from "../../store/actions/todo";
+import Textarea from "../UI/Textarea";
 
 const CreateTodo = () => {
   const item = {
@@ -22,7 +23,13 @@ const CreateTodo = () => {
     <>
       <Title>Create todo</Title>
       <Input type="text" />
-      <Button onClick={createItemHandler}>Create Todo</Button>
+      <Input type="date" />
+      <Input type="time" />
+      <Input type="color" />
+      <Input type="checkbox" />
+      <Input type="checkbox" />
+      <Textarea></Textarea>
+      <Button onClick={createItemHandler}>Save</Button>
     </>
   );
 };
