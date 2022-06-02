@@ -5,6 +5,9 @@ const Sticker = (props) => {
 
   return (
     <div className={style.sticker}>
+      <div className={style.close} onClick={props.onClose}>
+        X
+      </div>
       <h4 className={`${style[headerIsDone]} ${style[headerIsImportant]}`}>
         {headerIsImportant && <span>! </span>}
         {props.name}

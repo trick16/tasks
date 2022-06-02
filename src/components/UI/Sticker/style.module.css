@@ -6,6 +6,17 @@
   border-radius: 10px;
   box-shadow: 1px 5px 13px #0077b6;
   color: #03045e;
+  position: relative;
+}
+.close {
+  height: 19px;
+  position: absolute;
+  right: 20px;
+  width: 15px;
+  font-size: 20px;
+  font-weight: 800;
+  color: red;
+  cursor: pointer;
 }
 .important {
   color: red;

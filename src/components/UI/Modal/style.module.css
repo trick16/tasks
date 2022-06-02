@@ -20,6 +20,16 @@
   overflow: hidden;
   padding: 20px;
 }
+.close {
+  height: 19px;
+  position: absolute;
+  right: 20px;
+  width: 15px;
+  font-size: 20px;
+  font-weight: 800;
+  color: red;
+  cursor: pointer;
+}
 
 @media (min-width: 768px) {
   .modal {
