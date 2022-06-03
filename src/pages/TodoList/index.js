@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { fetchTodoList } from "../../store/actions/todo";
+import { deleteTodoItem, fetchTodoList } from "../../store/actions/todo";
 
 import Button from "../../components/UI/Button";
 import Title from "../../components/UI/Title";
@@ -15,6 +15,9 @@ const TodoList = (props) => {
   const list = useSelector((state) => state.todo.items);
   const listHandler = () => {
     dispatch(fetchTodoList());
+  };
+  const deleteHandler = (id) => {
+    dispatch(deleteTodoItem(id));
   };
 
   const [showCreate, setShowCreate] = useState(false);
@@ -42,6 +45,7 @@ const TodoList = (props) => {
       <div className={style.todoContainer}>
         {list.map((item) => (
           <Sticker
+            onClose={deleteHandler.bind(this, item.id)}
             key={item.id}
             name={item.name}
             description={item.description}

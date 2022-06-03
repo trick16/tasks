@@ -8,6 +8,9 @@ export const TODO_ACTION_TYPES = {
   CREATE_ITEM: "create/todoItem/Request",
   ERROR_ITEM_CREATE: "create/todoItem/Error",
   SUCCESS_ITEM_CREATE: "create/todoItem/Success",
+  DELETE_ITEM: "delete/todoItem/Request",
+  SUCCESS_ITEM_DELETE: "delete/todoItem/Success",
+  ERROR_ITEM_DELETE: "delete/todoItem/Error",
 };
 export const fetchTodoList = () => ({
   type: TODO_ACTION_TYPES.FETCH_LIST,
@@ -43,5 +46,17 @@ export const createTodoItemError = (error) => ({
 });
 export const createTodoItemSuccess = () => ({
   type: TODO_ACTION_TYPES.SUCCESS_ITEM_CREATE,
+  payload: null,
+});
+export const deleteTodoItem = (id) => ({
+  type: TODO_ACTION_TYPES.DELETE_ITEM,
+  payload: id,
+});
+export const deleteItemError = (error) => ({
+  type: TODO_ACTION_TYPES.ERROR_ITEM_DELETE,
+  payload: error,
+});
+export const deleteItemSuccess = () => ({
+  type: TODO_ACTION_TYPES.SUCCESS_ITEM_DELETE,
   payload: null,
 });

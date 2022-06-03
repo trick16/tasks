@@ -55,6 +55,15 @@ const todoReducer = (state = INITIAL_STATE, action) => {
     case TODO_ACTION_TYPES.SUCCESS_ITEM_CREATE: {
       return { ...state, errorCteate: null, pendingCreate: false };
     }
+    case TODO_ACTION_TYPES.DELETE_ITEM: {
+      return { ...state, pendingDelete: true };
+    }
+    case TODO_ACTION_TYPES.SUCCESS_ITEM_DELETE: {
+      return { ...state, errorDelete: null, pendingDelete: false };
+    }
+    case TODO_ACTION_TYPES.ERROR_ITEM_DELETE: {
+      return { ...state, errorDelete: action.payload, pendingDelete: false };
+    }
     default:
       return state;
   }
