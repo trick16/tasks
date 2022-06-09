@@ -44,9 +44,9 @@ export const createTodoItemError = (error) => ({
   type: TODO_ACTION_TYPES.ERROR_ITEM_CREATE,
   payload: error,
 });
-export const createTodoItemSuccess = () => ({
+export const createTodoItemSuccess = (data) => ({
   type: TODO_ACTION_TYPES.SUCCESS_ITEM_CREATE,
-  payload: null,
+  payload: data,
 });
 export const deleteTodoItem = (id) => ({
   type: TODO_ACTION_TYPES.DELETE_ITEM,
@@ -56,7 +56,7 @@ export const deleteItemError = (error) => ({
   type: TODO_ACTION_TYPES.ERROR_ITEM_DELETE,
   payload: error,
 });
-export const deleteItemSuccess = () => ({
+export const deleteItemSuccess = (id) => ({
   type: TODO_ACTION_TYPES.SUCCESS_ITEM_DELETE,
-  payload: null,
+  payload: id,
 });

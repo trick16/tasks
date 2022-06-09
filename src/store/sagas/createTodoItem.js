@@ -43,7 +43,7 @@ const run = function* (action) {
       "https://react-http-test-f4741-default-rtdb.firebaseio.com/todos.json",
       updatedData
     );
-    yield put(createTodoItemSuccess());
+    yield put(createTodoItemSuccess(updatedData));
   } catch (error) {
     yield put(createTodoItemError(error));
   }

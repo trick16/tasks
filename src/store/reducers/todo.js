@@ -53,13 +53,17 @@ const todoReducer = (state = INITIAL_STATE, action) => {
       return { ...state, errorCreate: action.payload, pendingCreate: false };
     }
     case TODO_ACTION_TYPES.SUCCESS_ITEM_CREATE: {
-      return { ...state, errorCteate: null, pendingCreate: false };
+      const items = [...state.items, action.payload];
+      const newState = { ...state, items };
+      return { ...newState, errorCteate: null, pendingCreate: false };
     }
     case TODO_ACTION_TYPES.DELETE_ITEM: {
       return { ...state, pendingDelete: true };
     }
     case TODO_ACTION_TYPES.SUCCESS_ITEM_DELETE: {
-      return { ...state, errorDelete: null, pendingDelete: false };
+      let items = state.items.filter((item) => item.id !== action.payload);
+      let newState = { ...state, items };
+      return { ...newState, errorDelete: null, pendingDelete: false };
     }
     case TODO_ACTION_TYPES.ERROR_ITEM_DELETE: {
       return { ...state, errorDelete: action.payload, pendingDelete: false };
