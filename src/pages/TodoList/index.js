@@ -39,7 +39,7 @@ const TodoList = (props) => {
       <Button onClick={listHandler}>{buttonText}</Button>
       {showCreate && (
         <Modal onClose={closeCreateHandler}>
-          <CreateTodo></CreateTodo>
+          <CreateTodo onClose={closeCreateHandler}></CreateTodo>
         </Modal>
       )}
       <div className={style.todoContainer}>

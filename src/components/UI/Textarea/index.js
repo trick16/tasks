@@ -1,4 +1,9 @@
 const Textarea = (props) => {
-  return <textarea {...props}></textarea>;
+  return (
+    <div>
+      {props.label && <label>{props.label}</label>}
+      <textarea {...props}></textarea>
+    </div>
+  );
 };
 export default Textarea;
