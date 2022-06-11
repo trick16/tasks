@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 const Input = (props) => {
   return (
     <div classNamae={styles.containter}>
-      {props.label && <label for={props.labelFor}>{props.label}</label>}
+      {props.label && <label htmlFor={props.labelFor}>{props.label}</label>}
       <input
         {...props}
         id={props.labelFor}

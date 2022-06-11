@@ -7,15 +7,6 @@ import Textarea from "../UI/Textarea";
 import { useState } from "react";
 
 const CreateTodo = (props) => {
-  const item = {
-    name: "Test3",
-    date: "15:30",
-    time: "05/2/24",
-    color: "blue",
-    isImportant: true,
-    isDone: false,
-    description: "sdfs sdf sdfjflkasdf",
-  };
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -24,6 +15,15 @@ const CreateTodo = (props) => {
   const [isDone, setIsDone] = useState(false);
   const [description, setDescription] = useState("");
 
+  const item = {
+    name,
+    date,
+    time,
+    color,
+    isImportant,
+    isDone,
+    description,
+  };
   const nameChangeHandler = (event) => {
     setName(event.target.value);
   };

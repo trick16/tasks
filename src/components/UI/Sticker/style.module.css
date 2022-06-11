@@ -18,6 +18,13 @@
   color: red;
   cursor: pointer;
 }
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
 .important {
   color: red;
 }
