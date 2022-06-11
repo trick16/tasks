@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import Title from "../UI/Title";
+import style from "./style.module.css";
 import { createTodoItem } from "../../store/actions/todo";
 import Textarea from "../UI/Textarea";
 import { useState } from "react";
@@ -68,47 +69,49 @@ const CreateTodo = (props) => {
         labelFor="name"
         onChange={nameChangeHandler}
       />
-      <Input
-        type="date"
-        value={date}
-        label="Date:"
-        labelFor="date"
-        onChange={dateChangeHandler}
-      />
-      <Input
-        type="time"
-        value={time}
-        label="Time:"
-        labelFor="time"
-        onChange={timeChangeHandler}
-      />
-      <Input
-        type="color"
-        value={color}
-        label="Color:"
-        labelFor="color"
-        onChange={colorChangeHandler}
-      />
-      <Input
-        type="checkbox"
-        value={isDone}
-        label="Done:"
-        labelFor="done"
-        onChange={isDoneChangeHandler}
-      />
-      <Input
-        type="checkbox"
-        value={isImportant}
-        label="Important:"
-        labelFor="important"
-        onChange={isImportantChangeHandler}
-      />
       <Textarea
         value={description}
         label="Description:"
         labelFor="description"
         onChange={descriptionChangeHandler}
       ></Textarea>
+      <div className={style.container}>
+        <Input
+          type="date"
+          value={date}
+          label="Date:"
+          labelFor="date"
+          onChange={dateChangeHandler}
+        />
+        <Input
+          type="time"
+          value={time}
+          label="Time:"
+          labelFor="time"
+          onChange={timeChangeHandler}
+        />
+        <Input
+          type="color"
+          value={color}
+          label="Color:"
+          labelFor="color"
+          onChange={colorChangeHandler}
+        />
+        <Input
+          type="checkbox"
+          value={isDone}
+          label="Done:"
+          labelFor="done"
+          onChange={isDoneChangeHandler}
+        />
+        <Input
+          type="checkbox"
+          value={isImportant}
+          label="Important:"
+          labelFor="important"
+          onChange={isImportantChangeHandler}
+        />
+      </div>
       <Button onClick={createItemHandler}>Save</Button>
     </>
   );

@@ -1,3 +1,5 @@
+import styles from "./style.module.css";
+
 const Textarea = (props) => {
   return (
     <div>
