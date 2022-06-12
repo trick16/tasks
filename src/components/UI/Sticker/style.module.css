@@ -1,0 +1,50 @@
+.sticker {
+  min-height: 100px;
+  background: #caf0f8;
+  border: 1px solid #00b4d8;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 1px 5px 13px #0077b6;
+  color: #03045e;
+  position: relative;
+}
+.close {
+  height: 19px;
+  position: absolute;
+  right: 20px;
+  width: 15px;
+  font-size: 20px;
+  font-weight: 800;
+  color: red;
+  cursor: pointer;
+}
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.important {
+  color: red;
+}
+.done {
+  text-decoration-line: line-through;
+}
+h4 {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+h5 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+p {
+  margin: 0 20px 10 0;
+}
+p {
+  color: black;
+}
