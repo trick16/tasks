@@ -3,13 +3,9 @@ import styles from "./style.module.css";
 
 const Input = (props) => {
   return (
-    <div classNamae={styles.containter}>
-      {props.label && <label htmlFor={props.labelFor}>{props.label}</label>}
-      <input
-        {...props}
-        id={props.labelFor}
-        className={clsx(styles.input, props.className)}
-      />
+    <div className={styles.containter}>
+      {props.label && <label htmlFor={props.id}>{props.label}</label>}
+      <input {...props} className={clsx(styles.input, props.className)} />
     </div>
   );
 };

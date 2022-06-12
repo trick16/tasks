@@ -57,6 +57,13 @@ const CreateTodo = (props) => {
 
   const createItemHandler = () => {
     dispatch(createTodoItem(item));
+    // setName("");
+    // setDate("");
+    // setDescription("");
+    // setColor("");
+    // setTime("");
+    // setIsDone(false);
+    // setIsImportant(false);
     props.onClose();
   };
   return (
@@ -66,13 +73,13 @@ const CreateTodo = (props) => {
         type="text"
         value={name}
         label="Name:"
-        labelFor="name"
+        id="name"
         onChange={nameChangeHandler}
       />
       <Textarea
         value={description}
         label="Description:"
-        labelFor="description"
+        id="description"
         onChange={descriptionChangeHandler}
       ></Textarea>
       <div className={style.container}>
@@ -80,35 +87,35 @@ const CreateTodo = (props) => {
           type="date"
           value={date}
           label="Date:"
-          labelFor="date"
+          id="date"
           onChange={dateChangeHandler}
         />
         <Input
           type="time"
           value={time}
           label="Time:"
-          labelFor="time"
+          id="time"
           onChange={timeChangeHandler}
         />
         <Input
           type="color"
           value={color}
           label="Color:"
-          labelFor="color"
+          id="color"
           onChange={colorChangeHandler}
         />
         <Input
           type="checkbox"
           value={isDone}
           label="Done:"
-          labelFor="done"
+          id="done"
           onChange={isDoneChangeHandler}
         />
         <Input
           type="checkbox"
           value={isImportant}
           label="Important:"
-          labelFor="important"
+          id="important"
           onChange={isImportantChangeHandler}
         />
       </div>
